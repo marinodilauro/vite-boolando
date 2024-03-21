@@ -18,7 +18,7 @@ export default {
 
       <!-- Logo -->
       <div class="logo">
-        <img width="100" class="logo_img" src="./assets/img/boolean-logo.png" alt="">
+        <img width="100" class="logo_img" src="/images/boolean-logo.png" alt="">
       </div>
 
       <!-- Login -->

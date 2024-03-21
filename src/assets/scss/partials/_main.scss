@@ -1,0 +1,115 @@
+@use './variables' as *;
+
+#site_main {
+  background-color: var(--booleando-lighter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.5rem;
+
+  /* Products list */
+  .products_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    gap: 2rem 1rem;
+    padding: 3rem 0;
+
+
+    /* Product card */
+
+    .product_card {
+      width: 32.4%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+
+
+      /* Image */
+      .image {
+        position: relative;
+        display: inline-block;
+      }
+
+      .hover_image {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+
+      /* Badges */
+      .like,
+      .badges {
+        position: absolute;
+      }
+
+      .badges {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        bottom: 15%;
+        gap: 0.5rem;
+      }
+
+      .like {
+        width: 10%;
+        height: 6%;
+        background-color: var(--booleando-lighter);
+        top: 1%;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .discount,
+      .sustainability {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+
+      .discount {
+        background-color: var(--booleando-discount);
+        color: var(--booleando-lighter);
+      }
+
+      .sustainability {
+        background-color: var(--booleando-sustainability);
+        color: var(--booleando-lighter);
+      }
+
+      .product_description {
+        align-self: flex-start;
+        list-style: none;
+      }
+
+      .product_brand {
+        font-size: 0.8rem;
+      }
+
+      .product_name {
+        font-weight: bold;
+      }
+
+      .product_price {
+        font-size: 0.9rem;
+      }
+
+      .discount_price {
+        font-weight: bold;
+        color: var(--booleando-discount);
+      }
+
+      .old_price {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
