@@ -13,7 +13,8 @@ export default {
           price: '29,99 €',
           badge_1: '-50%',
           badge_2: 'sustainability',
-          discounted_price: '14,99 €'
+          discounted_price: '14,99 €',
+          liked: false
         },
         {
           image_1: '/images/2.webp',
@@ -22,7 +23,8 @@ export default {
           name: 'ROSES TEE',
           price: '29,99 €',
           badge_1: '-30%',
-          discounted_price: '20,99 €'
+          discounted_price: '20,99 €',
+          liked: false
         },
         {
           image_1: '/images/3.webp',
@@ -31,7 +33,8 @@ export default {
           name: 'VOGLIA DI COLORI PASTELLO',
           price: '184,99 €',
           badge_1: '-30%',
-          discounted_price: '129,99 €'
+          discounted_price: '129,99 €',
+          liked: false
         },
         {
           image_1: '/images/4.webp',
@@ -41,7 +44,8 @@ export default {
           price: '29,99 €',
           badge_1: '-50%',
           badge_2: 'sustainability',
-          discounted_price: '14,99 €'
+          discounted_price: '14,99 €',
+          liked: false
         },
         {
           image_1: '/images/5.webp',
@@ -49,6 +53,7 @@ export default {
           brand: 'Maya Deluxe',
           name: 'STRIPE BODICE',
           price: '99,99 €',
+          liked: false
         },
         {
           image_1: '/images/6.webp',
@@ -56,7 +61,8 @@ export default {
           brand: 'Esprit',
           name: 'MAGLIONE - BLACK',
           price: '24,99 €',
-          badge_2: 'sustainability'
+          badge_2: 'sustainability',
+          liked: false
         },
       ]
     }
@@ -82,8 +88,8 @@ export default {
             <img class="hover_image" :src="product.image_2" alt="">
           </div>
           <!-- Like -->
-          <div class="like">
-            <i class="fa-solid fa-heart"></i>
+          <div class="like" @click="product.liked = !product.liked">
+            <i class="fa-solid fa-heart" :class="{ liked: product.liked === true }"></i>
           </div>
           <!-- Badges -->
           <div class="badges">

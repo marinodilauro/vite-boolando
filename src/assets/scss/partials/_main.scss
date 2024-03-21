@@ -33,6 +33,10 @@
       .image {
         position: relative;
         display: inline-block;
+
+        &:hover .hover_image {
+          display: inline;
+        }
       }
 
       .hover_image {
@@ -66,6 +70,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &:hover {
+          cursor: pointer;
+          color: $booleando-discount;
+        }
+      }
+
+      .liked {
+        color: $booleando-discount;
       }
 
       .discount,
