@@ -1,6 +1,25 @@
 <script>
+import AppLogo from './AppLogo.vue';
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  data() {
+    return {
+      navLinks: [
+        'Donna',
+        'Uomo',
+        'Banbino'
+      ],
+      navIcons: [
+        'fa-regular fa-user',
+        'fa-regular fa-heart',
+        'fa-solid fa-bag-shopping'
+      ]
+    }
+  },
+  components: {
+    AppLogo
+  }
 }
 </script>
 
@@ -11,21 +30,15 @@ export default {
 
       <!-- Links -->
       <ul class="links product_section_links">
-        <li><a href="#">Donna</a></li>
-        <li><a href="#">Uomo</a></li>
-        <li><a href="#">Bambino</a></li>
+        <li v-for="link in navLinks"><a href="#">{{ link }}</a></li>
       </ul>
 
       <!-- Logo -->
-      <div class="logo">
-        <img width="100" class="logo_img" src="/images/boolean-logo.png" alt="">
-      </div>
+      <AppLogo />
 
       <!-- Login -->
       <div class="account_icons">
-        <a href="#"><i class="fa-regular fa-user"></i></a>
-        <a href="#"><i class="fa-regular fa-heart"></i></a>
-        <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a v-for="icon in  navIcons" href="#"><i :class="icon"></i></a>
       </div>
     </nav>
 
