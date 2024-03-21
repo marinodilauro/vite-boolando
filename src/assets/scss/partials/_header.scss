@@ -1,0 +1,41 @@
+@use './variables' as *;
+
+#site_header {
+  background-color: $booleando-primary;
+  color: $booleando-lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 0 4px 0 $boolenado-dark;
+
+  .header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+
+
+    .logo,
+    .account_icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .product_section_links {
+      font-weight: 600;
+    }
+
+    .logo {
+      justify-content: center;
+      width: 40%;
+    }
+
+    .account_icons {
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  }
+}
