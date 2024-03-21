@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 #site_main {
-  background-color: var(--booleando-lighter);
+  background-color: var($booleando-lighter);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@
       .like {
         width: 10%;
         height: 6%;
-        background-color: var(--booleando-lighter);
+        background-color: var($booleando-lighter);
         top: 1%;
         right: 0;
         display: flex;
@@ -76,13 +76,13 @@
       }
 
       .discount {
-        background-color: var(--booleando-discount);
-        color: var(--booleando-lighter);
+        background-color: var($booleando-discount);
+        color: var($booleando-lighter);
       }
 
       .sustainability {
-        background-color: var(--booleando-sustainability);
-        color: var(--booleando-lighter);
+        background-color: var($booleando-sustainability);
+        color: var($booleando-lighter);
       }
 
       .product_description {
@@ -104,7 +104,7 @@
 
       .discount_price {
         font-weight: bold;
-        color: var(--booleando-discount);
+        color: var($booleando-discount);
       }
 
       .old_price {
