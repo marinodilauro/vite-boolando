@@ -10,9 +10,9 @@ export default {
           image_2: '/images/1b.webp',
           brand: "Levi's",
           name: 'RELAXED FIT TEE UNISEX',
-          badges: ['discount', 'sustainability'],
           price: '29,99 €',
-          discount: '-50%',
+          badge_1: '-50%',
+          badge_2: 'sustainability',
           discounted_price: '14,99 €'
         },
         {
@@ -20,9 +20,8 @@ export default {
           image_2: '/images/2b.webp',
           brand: 'Guess',
           name: 'ROSES TEE',
-          badges: ['discount'],
           price: '29,99 €',
-          discount: '-30%',
+          badge_1: '-30%',
           discounted_price: '20,99 €'
         },
         {
@@ -30,9 +29,8 @@ export default {
           image_2: '/images/3b.webp',
           brand: 'Come Zucchero Filato',
           name: 'VOGLIA DI COLORI PASTELLO',
-          badges: ['discount'],
           price: '184,99 €',
-          discount: '-30%',
+          badge_1: '-30%',
           discounted_price: '129,99 €'
         },
         {
@@ -40,9 +38,9 @@ export default {
           image_2: '/images/4b.webp',
           brand: "Levi's",
           name: 'TEE UNISEX',
-          badges: ['discount', 'sustainability'],
           price: '29,99 €',
-          discount: '50%',
+          badge_1: '-50%',
+          badge_2: 'sustainability',
           discounted_price: '14,99 €'
         },
         {
@@ -50,20 +48,15 @@ export default {
           image_2: '/images/5b.webp',
           brand: 'Maya Deluxe',
           name: 'STRIPE BODICE',
-          badges: [],
           price: '99,99 €',
-          discount: '',
-          discounted_price: ''
         },
         {
           image_1: '/images/6.webp',
           image_2: '/images/6b.webp',
           brand: 'Esprit',
           name: 'MAGLIONE - BLACK',
-          badges: ['sustainability'],
           price: '24,99 €',
-          discount: '',
-          discounted_price: ''
+          badge_2: 'sustainability'
         },
       ]
     }
@@ -89,15 +82,15 @@ export default {
             <img class="hover_image" :src="product.image_2" alt="">
           </div>
           <!-- Like -->
-          <div class=" like">
+          <div class="like">
             <i class="fa-solid fa-heart"></i>
           </div>
           <!-- Badges -->
-          <div v-for="badges in product.badges" class="badges">
+          <div class="badges">
             <!-- Discount badge -->
-            <div class="discount">{{ product.discount }}</div>
+            <div v-if="product.badge_1" class="discount">{{ product.badge_1 }}</div>
             <!-- Sustainability badge -->
-            <div class="sustainability">{{ product.badges[1] }}</div>
+            <div v-if="product.badge_2" class="sustainability">{{ product.badge_2 }}</div>
           </div>
         </div>
 
@@ -109,8 +102,8 @@ export default {
           <li class="product_name">{{ product.name }}</li>
           <!-- Product price -->
           <li class="product_price">
-            <span class="discount_price">{{ product.discounted_price }}</span>
-            <span class="old_price">{{ product.price }}</span>
+            <span v-if="product.discounted_price" class="discount_price">{{ product.discounted_price }}</span>
+            <span :class="product.discounted_price ? 'old_price' : 'normal_price'">{{ product.price }}</span>
           </li>
         </ul>
       </div>

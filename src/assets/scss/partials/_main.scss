@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 #site_main {
-  background-color: var($booleando-lighter);
+  background-color: $booleando-lighter;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@
       .like {
         width: 10%;
         height: 6%;
-        background-color: var($booleando-lighter);
+        background-color: $booleando-lighter;
         top: 1%;
         right: 0;
         display: flex;
@@ -76,39 +76,47 @@
       }
 
       .discount {
-        background-color: var($booleando-discount);
-        color: var($booleando-lighter);
+        background-color: $booleando-discount;
+        color: $booleando-lighter;
       }
 
       .sustainability {
-        background-color: var($booleando-sustainability);
-        color: var($booleando-lighter);
+        background-color: $booleando-sustainability;
+        color: $booleando-lighter;
       }
 
+      /* Description */
       .product_description {
         align-self: flex-start;
         list-style: none;
-      }
 
-      .product_brand {
-        font-size: 0.8rem;
-      }
 
-      .product_name {
-        font-weight: bold;
-      }
+        .product_brand {
+          font-size: 0.8rem;
+        }
 
-      .product_price {
-        font-size: 0.9rem;
-      }
+        .product_name {
+          font-weight: bold;
+        }
 
-      .discount_price {
-        font-weight: bold;
-        color: var($booleando-discount);
-      }
+        .product_price {
+          font-size: 0.9rem;
+        }
 
-      .old_price {
-        text-decoration: line-through;
+        .discount_price {
+          font-weight: bold;
+          font-size: 1.2rem;
+          color: $booleando-discount;
+          padding-right: 0.5rem;
+        }
+
+        .normal_price {
+          font-size: 1.2rem;
+        }
+
+        .old_price {
+          text-decoration: line-through;
+        }
       }
     }
   }
