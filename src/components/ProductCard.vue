@@ -3,6 +3,16 @@ export default {
   name: 'ProductCard',
   props: {
     product: Object
+  },
+  methods: {
+    calcDiscountedPrice(price) {
+
+      const discount = (this.product.badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
+
+      const discountedPrice = (price - (price * discount)).toFixed(2);
+
+      return discountedPrice;
+    }
   }
 }
 </script>
@@ -44,11 +54,15 @@ export default {
 
       <!-- Product price -->
       <li class="product_price">
-        <span v-if="product.badges.find(e => e.type === 'discount')" class="discount_price">{{ (product.price -
-          (product.price * (product.badges.find(e => e.type === 'discount').value.substring(1, 3) / 100))).toFixed(2)
-          }} €</span>
-        <span :class="product.badges.find(e => e.type === 'discount') ? 'old_price' : 'normal_price'">{{ product.price
-          }} €</span>
+
+        <span v-if="product.badges.find(e => e.type === 'discount')" class="discount_price">
+          {{ calcDiscountedPrice(product.price) }} €
+        </span>
+
+        <span :class="product.badges.find(e => e.type === 'discount') ? 'old_price' : 'normal_price'">
+          {{ product.price }} €
+        </span>
+
       </li>
 
     </ul>
