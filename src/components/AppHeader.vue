@@ -1,5 +1,6 @@
 <script>
 import AppLogo from './AppLogo.vue';
+import { state } from '../state.js';
 
 export default {
   name: 'AppHeader',
@@ -11,10 +12,21 @@ export default {
         'Banbino'
       ],
       navIcons: [
-        'fa-regular fa-user',
-        'fa-regular fa-heart',
-        'fa-solid fa-bag-shopping'
-      ]
+        {
+          name: 'user',
+          icon: 'fa-regular fa-user'
+        },
+        {
+          name: 'favorites',
+          icon: 'fa-regular fa-heart',
+
+        },
+        {
+          name: 'shopping_bag',
+          icon: 'fa-solid fa-bag-shopping'
+        }
+      ],
+      state
     }
   },
   components: {
@@ -38,8 +50,24 @@ export default {
 
       <!-- Login -->
       <div class="account_icons">
-        <a v-for="icon in  navIcons" href="#"><i :class="icon"></i></a>
+        <a v-for="item in  navIcons" href="#">
+
+          <i :class="item.icon">
+
+            <!-- Favourites counter -->
+            <div v-if="item.icon === this.navIcons[1].icon">
+
+              <div class="favourites_counter" v-if="state.favoriteProducts.length > 0">
+                {{ state.favoriteProducts.length }}
+              </div>
+
+            </div>
+
+          </i>
+
+        </a>
       </div>
+
     </nav>
 
   </header>

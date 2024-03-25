@@ -1,8 +1,15 @@
 <script>
+import { state } from '../state.js';
+
 export default {
   name: 'ProductCard',
+  data() {
+    return {
+      state
+    }
+  },
   props: {
-    product: Object
+    product: Object,
   },
   methods: {
     calcDiscountedPrice(price) {
@@ -32,7 +39,7 @@ export default {
       </div>
 
       <!-- Like -->
-      <div class="like" @click="product.isInFavorites = !product.isInFavorites">
+      <div class="like" @click="product.isInFavorites = !product.isInFavorites, state.addToFavorites()">
         <i class="fa-solid fa-heart" :class="{ liked: product.isInFavorites === true }"></i>
       </div>
 

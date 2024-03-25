@@ -36,6 +36,25 @@
     .account_icons {
       justify-content: flex-end;
       gap: 1rem;
+
+      a:nth-child(2) {
+        position: relative;
+      }
+
+      .favourites_counter {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        width: 0.65rem;
+        height: 0.65rem;
+        padding: 0.1rem 0.1rem 0.5rem 0.1rem;
+        color: $booleando-primary;
+        text-align: center;
+        font-size: 0.5rem;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 100%;
+      }
     }
   }
 }
