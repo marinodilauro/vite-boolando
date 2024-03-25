@@ -8,12 +8,19 @@
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-
+  border-radius: 8px;
+  backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 35px 68px 0px rgba(30, 30, 30, 0.255);
 
   /* Image */
   .image {
     position: relative;
     display: inline-block;
+
+    img {
+      border-radius: 8px 8px 0 0;
+    }
 
     &:hover .hover_image {
       display: inline;
@@ -43,11 +50,12 @@
   }
 
   .like {
-    width: 10%;
-    height: 6%;
+    width: 8%;
+    height: 5%;
     background-color: $booleando-lighter;
-    top: 1%;
-    right: 0;
+    top: 3%;
+    right: 0%;
+    border-radius: 4px 0 0 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +91,7 @@
   .product_description {
     align-self: flex-start;
     list-style: none;
-
+    padding: 0.5rem;
 
     .product_brand {
       font-size: 0.8rem;
