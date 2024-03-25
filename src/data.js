@@ -1,4 +1,4 @@
-export const products = [
+/* export const products = [
   {
     "id": 1,
     "frontImage": "1.webp",
@@ -101,4 +101,4 @@ export const products = [
       }
     ]
   }
-]
+] */
