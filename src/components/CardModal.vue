@@ -38,6 +38,12 @@ export default {
       }
 
     }
+  },
+  mounted() {
+    console.log(this.productId);
+  },
+  updated() {
+    console.log(this.productId);
   }
 }
 </script>

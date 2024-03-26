@@ -11,13 +11,11 @@ export default {
     ProductCard,
     CardModal
   },
-  provide: {
-    productId: null
-  },
   data() {
     return {
       state,
-      isModalVisible: false
+      isModalVisible: false,
+      productId: null
     }
   },
   provide() {
