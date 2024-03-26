@@ -33,6 +33,7 @@ export default {
       this.isModalVisible = true;
 
     },
+
     closeModal() {
 
       this.isModalVisible = false;

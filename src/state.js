@@ -7,6 +7,7 @@ export const state = reactive({
   // State (data)
   products: [],
   favoriteProducts: [],
+  addedToCart: [],
   base_products_api_url: 'http://localhost:3000/products',
 
   // Actions that change the state
@@ -22,8 +23,15 @@ export const state = reactive({
       })
 
   },
+
   addToFavorites() {
     this.favoriteProducts = this.products.filter((product) => product.isInFavorites === true);
     console.log(this.favoriteProducts);
+  },
+
+  addToCart() {
+    this.addedToCart = this.products.filter((product) => product.isInCart === true);
+    console.log(this.addedToCart);
   }
+
 })

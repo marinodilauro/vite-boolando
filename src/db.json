@@ -7,6 +7,7 @@
       "brand": "Levi's",
       "name": "Relaxed Fit Tee Unisex",
       "price": 29.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {
@@ -26,6 +27,7 @@
       "brand": "Guess",
       "name": "Roses Tee",
       "price": 29.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {
@@ -41,6 +43,7 @@
       "brand": "Come Zucchero Filato",
       "name": "Voglia di colori pastello",
       "price": 184.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {
@@ -56,6 +59,7 @@
       "brand": "Levi's",
       "name": "Tee Unisex",
       "price": 29.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {
@@ -75,6 +79,7 @@
       "brand": "Maya Deluxe",
       "name": "Stripe Bodice",
       "price": 99.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {
@@ -94,6 +99,7 @@
       "brand": "Esprit",
       "name": "Maglione - Black",
       "price": 29.99,
+      "isInCart": false,
       "isInFavorites": false,
       "badges": [
         {

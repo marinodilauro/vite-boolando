@@ -57,8 +57,17 @@ export default {
             <!-- Favourites counter -->
             <div v-if="item.icon === this.navIcons[1].icon">
 
-              <div class="favourites_counter" v-if="state.favoriteProducts.length > 0">
+              <div class="counter" v-if="state.favoriteProducts.length > 0">
                 {{ state.favoriteProducts.length }}
+              </div>
+
+            </div>
+
+            <!-- Shopping cart counter -->
+            <div v-if="item.icon === this.navIcons[2].icon">
+
+              <div class="counter" v-if="state.addedToCart.length > 0">
+                {{ state.addedToCart.length }}
               </div>
 
             </div>

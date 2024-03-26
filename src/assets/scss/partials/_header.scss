@@ -37,11 +37,11 @@
       justify-content: flex-end;
       gap: 1rem;
 
-      a:nth-child(2) {
+      a:not(:nth-child(1)) {
         position: relative;
       }
 
-      .favourites_counter {
+      .counter {
         position: absolute;
         top: 40%;
         left: 60%;

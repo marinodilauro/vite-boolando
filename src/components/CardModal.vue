@@ -62,7 +62,8 @@ export default {
         </div>
 
         <div class="buttons">
-          <button class="button" type="button">
+          <button class="button" type="button"
+            @click="state.products[this.productId - 1].isInCart = !state.products[this.productId - 1].isInCart, state.addToCart()">
             Add to cart
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
