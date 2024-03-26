@@ -3,6 +3,7 @@ import { state } from '../state.js';
 
 export default {
   name: 'ProductCard',
+  emits: ['showModal'],
   data() {
     return {
       state
@@ -57,7 +58,7 @@ export default {
       <li class="product_brand">{{ product.brand }}</li>
 
       <!-- Product name -->
-      <li class="product_name">{{ product.name }}</li>
+      <li class="product_name" @click="$emit('showModal', product.id)">{{ product.name }}</li>
 
       <!-- Product price -->
       <li class="product_price">

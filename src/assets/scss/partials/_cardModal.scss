@@ -1,0 +1,51 @@
+@use './variables' as *;
+
+.modal {
+  width: 450px;
+  aspect-ratio: 1;
+  background-color: #efefef;
+  border-radius: 8px;
+  box-shadow: 0px 35px 68px 0px rgba(30, 30, 30, 0.8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  .modal_header {
+    height: 80px;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-bottom: 2px solid #c0c0c0;
+  }
+
+  .modal_body {
+    height: 350px;
+    padding: 1rem;
+    border-bottom: 2px solid #c0c0c0;
+
+    .product_brand {
+      font-size: 0.8rem;
+    }
+
+    .product_name {
+      font-weight: bold;
+    }
+
+    .product_price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $booleando-discount;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .modal_footer {
+    height: 80px;
+  }
+
+}
+
+.isVisible {
+  display: block;
+}
