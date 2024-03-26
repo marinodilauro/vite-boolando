@@ -32,9 +32,6 @@ export default {
       }
 
     }
-  },
-  updated() {
-    console.log(product.id);
   }
 }
 </script>
