@@ -3,7 +3,7 @@ import { state } from '../state.js';
 
 export default {
   name: 'ProductCard',
-  emits: ['showModal'],
+  emits: ['openModal'],
   data() {
     return {
       state
@@ -15,11 +15,22 @@ export default {
   methods: {
     calcDiscountedPrice(price) {
 
-      const discount = (this.product.badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
+      let discount;
+      let discountedPrice;
 
-      const discountedPrice = (price - (price * discount)).toFixed(2);
+      if (this.product.badges.type === 'discount') {
 
-      return discountedPrice;
+        discount = (this.product.badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
+
+        discountedPrice = (price - (price * discount)).toFixed(2);
+        return discountedPrice;
+
+      } else {
+
+        return this.product.price
+
+      }
+
     }
   }
 }
@@ -58,7 +69,7 @@ export default {
       <li class="product_brand">{{ product.brand }}</li>
 
       <!-- Product name -->
-      <li class="product_name" @click="$emit('showModal', product.id)">{{ product.name }}</li>
+      <li class="product_name" @click="$emit('openModal', product.id), console.log(product.id)">{{ product.name }}</li>
 
       <!-- Product price -->
       <li class="product_price">

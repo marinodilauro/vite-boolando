@@ -1,0 +1,44 @@
+.container {
+
+  .slider_wrapper {
+    display: flex;
+    gap: 0.3rem;
+
+    .item {
+      float: left;
+      width: 300px;
+      position: relative;
+
+      img {
+        max-width: 100%;
+
+        &.active_image {
+          display: block;
+        }
+      }
+    }
+
+    .thumbs {
+      display: flex;
+      flex-direction: column;
+      height: 250px;
+      position: relative;
+
+      .thumb {
+        height: calc(250px / 2);
+        opacity: 0.5;
+
+        &.active {
+          border: 2px solid #ccc;
+          opacity: 1;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

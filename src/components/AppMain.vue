@@ -3,6 +3,7 @@
 import ProductCard from './ProductCard.vue';
 import CardModal from './CardModal.vue';
 import { state } from '../state.js';
+import { computed } from 'vue';
 
 export default {
   name: 'AppMain',
@@ -10,20 +11,33 @@ export default {
     ProductCard,
     CardModal
   },
+  provide: {
+    productId: null
+  },
   data() {
     return {
       state,
-      isModalVisible: false,
-      productId: null
+      isModalVisible: false
+    }
+  },
+  provide() {
+    return {
+      productId: computed(() => this.productId)
     }
   },
   methods: {
 
-    showModal(productId) {
+    openModal(productId) {
 
+      console.log(this.productId);
       this.productId = productId;
+      console.log(this.productId);
       this.isModalVisible = true;
-      // this.state.getProducts(`http://localhost:3000/products?id=${productId}`);
+
+    },
+    closeModal() {
+
+      this.isModalVisible = false;
 
     }
 
@@ -43,11 +57,11 @@ export default {
     <!-- Products list -->
     <section class="products_container">
 
-      <ProductCard :product="product" v-for="product in state.products" @showModal="showModal" />
+      <ProductCard :product="product" v-for="product in state.products" @openModal="openModal" />
 
     </section>
 
-    <CardModal :isVisible="isModalVisible" :productId="productId" />
+    <CardModal :isVisible="isModalVisible" @closeModal="closeModal" />
 
   </main>
 

@@ -1,25 +1,42 @@
 <script>
+import ImageSlider from './ImageSlider.vue';
 import { state } from '../state.js';
 
 export default {
   name: 'CardModal',
+  emits: ['closeModal'],
+  components: {
+    ImageSlider
+  },
+  inject: ['productId'],
   data() {
     return {
       state
     }
   },
   props: {
-    isVisible: Boolean,
-    productId: Number
+    isVisible: Boolean
   },
   methods: {
     calcDiscountedPrice(productId) {
 
-      const discount = (state.products[productId].badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
+      let discount;
+      let discountedPrice;
 
-      const discountedPrice = (state.products[productId].price - (state.products[productId].price * discount)).toFixed(2);
+      if (state.products[productId].badges.type === 'discount') {
 
-      return discountedPrice;
+        discount = (state.products[productId].badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
+
+        discountedPrice = (state.products[productId].price - (state.products[productId].price * discount)).toFixed(2);
+
+        return discountedPrice;
+
+      } else {
+
+        return state.products[productId].price
+
+      }
+
     }
   }
 }
@@ -29,14 +46,34 @@ export default {
 
   <div class="modal" v-if="this.isVisible">
 
-    <div class="modal_header">{{ state.products[productId - 1].name }}</div>
     <div class="modal_body">
-      <p class="product_brand">{{ state.products[productId - 1].brand }}</p>
-      <p class="product_name">{{ state.products[productId - 1].name }}</p>
-      <p class="product_price">{{ calcDiscountedPrice(productId - 1) }} €</p>
+
+      <div class="image_slider">
+        <ImageSlider />
+      </div>
+
+      <div class="product_description">
+
+        <p class="product_brand">{{ state.products[this.productId - 1].brand }}</p>
+        <p class="product_name">{{ state.products[this.productId - 1].name }}</p>
+        <div class="product_price">
+          <span class="discounted_price">{{ calcDiscountedPrice(this.productId - 1) }} € </span>
+          <span class="old_price">{{ state.products[this.productId - 1].price }} €</span>
+        </div>
+
+        <div class="buttons">
+          <button class="button" type="button">
+            Add to cart
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button class="button" type="button" @click="$emit('closeModal')">Close</button>
+        </div>
+
+      </div>
+
+
 
     </div>
-    <div class="modal_footer"></div>
 
   </div>
 
