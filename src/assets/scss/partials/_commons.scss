@@ -34,3 +34,8 @@ img {
 .d_none {
     display: none;
 }
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}

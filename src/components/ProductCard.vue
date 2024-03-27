@@ -18,7 +18,7 @@ export default {
       let discount;
       let discountedPrice;
 
-      if (this.product.badges.type === 'discount') {
+      if (this.product.badges.find(e => e.type === 'discount')) {
 
         discount = (this.product.badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
 
@@ -69,7 +69,7 @@ export default {
       <li class="product_brand">{{ product.brand }}</li>
 
       <!-- Product name -->
-      <li class="product_name" @click="$emit('openModal', product.id), console.log(product.id)">{{ product.name }}</li>
+      <li class="product_name" @click="$emit('openModal', product.id)">{{ product.name }}</li>
 
       <!-- Product price -->
       <li class="product_price">

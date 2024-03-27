@@ -27,10 +27,12 @@ export default {
 
     openModal(productId) {
 
-      console.log(this.productId);
       this.productId = productId;
-      console.log(this.productId);
+
       this.isModalVisible = true;
+
+      document.body.classList.add("stop-scrolling");
+      document.html.classList.add("stop-scrolling");
 
     },
 
@@ -38,8 +40,10 @@ export default {
 
       this.isModalVisible = false;
 
-    }
+      document.body.classList.remove("stop-scrolling");
+      document.html.classList.add("stop-scrolling");
 
+    }
   },
   mounted() {
 

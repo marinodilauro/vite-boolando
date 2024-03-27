@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 55px;
   position: fixed;
   z-index: 1000;
   box-shadow: 0 0 4px 0 $boolenado-dark;
@@ -16,7 +17,6 @@
     align-items: center;
     justify-content: space-between;
     width: 70%;
-
 
     .logo,
     .account_icons {

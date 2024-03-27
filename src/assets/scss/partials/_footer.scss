@@ -1,6 +1,7 @@
 @use './variables' as *;
 
 #site_footer {
+  height: 100px;
   background-color: $boolenado-dark;
   color: $booleando-lighter;
   display: flex;

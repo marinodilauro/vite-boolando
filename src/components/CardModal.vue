@@ -23,7 +23,7 @@ export default {
       let discount;
       let discountedPrice;
 
-      if (state.products[productId].badges.type === 'discount') {
+      if (state.products[productId].badges.find(e => e.type === 'discount')) {
 
         discount = (state.products[productId].badges.find(e => e.type === 'discount').value.substring(1, 3)) / 100;
 

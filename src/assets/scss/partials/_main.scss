@@ -1,11 +1,14 @@
 @use './variables' as *;
 
 #site_main {
+  width: 100%;
+  height: calc(100% - ($booleando-header-height + $booleando-footer-height));
   background-color: $booleando-lighter;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3.5rem;
+  padding-top: 5.5rem;
+  padding-bottom: 2.5rem;
 
   /* Products list */
   .products_container {
@@ -15,6 +18,5 @@
     flex-wrap: wrap;
     width: 70%;
     gap: 2rem 1rem;
-    padding: 3rem 0;
   }
 }
