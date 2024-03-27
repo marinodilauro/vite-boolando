@@ -32,7 +32,6 @@ export default {
       this.isModalVisible = true;
 
       document.body.classList.add("stop-scrolling");
-      document.html.classList.add("stop-scrolling");
 
     },
 
@@ -41,7 +40,6 @@ export default {
       this.isModalVisible = false;
 
       document.body.classList.remove("stop-scrolling");
-      document.html.classList.add("stop-scrolling");
 
     }
   },
