@@ -16,7 +16,7 @@ export default {
 
 <template>
 
-  <div class="container">
+  <div class="slider_container">
     <div class="slider_wrapper" tabindex="0">
 
       <!-- Active image -->

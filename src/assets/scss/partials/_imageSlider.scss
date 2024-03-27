@@ -1,13 +1,13 @@
-.container {
+.slider_container {
 
   .slider_wrapper {
     display: flex;
     gap: 0.3rem;
 
     .item {
-      float: left;
+      // float: left;
       width: 300px;
-      position: relative;
+      // position: relative;
 
       img {
         max-width: 100%;
