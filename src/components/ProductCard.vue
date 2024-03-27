@@ -52,7 +52,7 @@ export default {
 
       <!-- Like -->
       <div class="like" @click="product.isInFavorites = !product.isInFavorites, state.addToFavorites()">
-        <i class="fa-solid fa-heart" :class="{ liked: product.isInFavorites === true }"></i>
+        <i class="fa-solid fa-heart fa-lg" :class="{ liked: product.isInFavorites === true }"></i>
       </div>
 
       <!-- Badges -->
