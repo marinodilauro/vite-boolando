@@ -44,8 +44,8 @@ export default {
     }
   },
   mounted() {
-
-    this.state.getProducts(this.state.base_products_api_url);
+    console.log(state.products);
+    // this.state.getProducts(this.state.base_products_api_url);
 
   }
 }

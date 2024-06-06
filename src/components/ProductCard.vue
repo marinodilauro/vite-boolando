@@ -46,8 +46,8 @@ export default {
 
       <!-- Image -->
       <div class="image">
-        <img :src="'/images/' + product.frontImage" alt="">
-        <img class="hover_image" :src="'/images/' + product.backImage" alt="">
+        <img :src="'images/' + product.frontImage" alt="">
+        <img class="hover_image" :src="'images/' + product.backImage" alt="">
       </div>
 
       <!-- Like -->

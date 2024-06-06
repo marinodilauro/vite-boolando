@@ -9,7 +9,7 @@ export default {
       navLinks: [
         'Donna',
         'Uomo',
-        'Banbino'
+        'Bambino'
       ],
       navIcons: [
         {
@@ -50,7 +50,7 @@ export default {
 
       <!-- Login -->
       <div class="account_icons">
-        <a v-for="item in  navIcons" href="#">
+        <a v-for="item in navIcons" href="#">
 
           <i :class="item.icon">
 
