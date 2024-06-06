@@ -21,9 +21,9 @@ export default {
 
       <!-- Active image -->
       <div class="item">
-        <img v-if="activeImage_1" :src="'/images/' + state.products[this.productId - 1].frontImage"
+        <img v-if="activeImage_1" :src="'images/' + state.products[this.productId - 1].frontImage"
           @click="console.log(state.products[this.productId - 1].frontImage)" />
-        <img v-if="activeImage_2" :src="'/images/' + state.products[this.productId - 1].backImage" />
+        <img v-if="activeImage_2" :src="'images/' + state.products[this.productId - 1].backImage" />
       </div>
 
 
@@ -32,12 +32,12 @@ export default {
 
         <div class="thumb" @click="activeImage_1 = true, activeImage_2 = false"
           :class="{ active: activeImage_1 === true }">
-          <img :src="'/images/' + state.products[this.productId - 1].frontImage" />
+          <img :src="'images/' + state.products[this.productId - 1].frontImage" />
         </div>
 
         <div class="thumb" @click="activeImage_2 = true, activeImage_1 = false"
           :class="{ active: activeImage_2 === true }">
-          <img :src="'/images/' + state.products[this.productId - 1].backImage" />
+          <img :src="'images/' + state.products[this.productId - 1].backImage" />
         </div>
 
       </div>
