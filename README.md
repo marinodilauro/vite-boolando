@@ -5,7 +5,7 @@ Questo progetto è una riproduzione di un e-commerce simile a Zalando.it, svilup
 ## Caratteristiche principali
 
 ### Catalogo prodotti
-- Visualizzazione di una vasta gamma di prodotti in una griglia responsive
+- Visualizzazione di prodotti in una griglia responsive
 - Ogni prodotto mostra immagine, marca, nome, prezzo e eventuali sconti
 
 ### Lista dei preferiti
@@ -39,21 +39,6 @@ Il progetto è organizzato in componenti Vue, ciascuno responsabile di una speci
 - `AppLogo.vue`: Componente logo
 - `ProductList.vue`: Contenitore principale per la visualizzazione dei prodotti
 
-## Come iniziare
+## Visualizzare il progetto
 
-1. Clona il repository
-2. Installa le dipendenze con `npm install`
-3. Avvia il server di sviluppo con `npm run serve`
-4. Apri il browser su `http://localhost:8080`
-
-## Personalizzazione
-
-Il progetto utilizza variabili Sass per i colori principali e le dimensioni. Puoi personalizzare l'aspetto modificando il file `src/styles/variables.scss`.
-
-## Contribuire
-
-Siamo aperti a contributi! Se hai suggerimenti per migliorare il progetto, non esitare ad aprire una issue o inviare una pull request.
-
-## Licenza
-
-Questo progetto è rilasciato sotto la licenza MIT. Vedi il file `LICENSE` per maggiori dettagli.
+Si può visionare il progetto a questo indirizzo https://marinodilauro.github.io/vite-boolando/
