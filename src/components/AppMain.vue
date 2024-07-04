@@ -56,9 +56,11 @@ export default {
   <main id="site_main">
 
     <!-- Products list -->
-    <section class="products_container">
+    <section class="container">
+      <div class="row g-5">
 
-      <ProductCard :product="product" v-for="product in state.products" @openModal="openModal" />
+        <ProductCard :product="product" v-for="product in state.products" @openModal="openModal" />
+      </div>
 
     </section>
 

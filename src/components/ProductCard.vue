@@ -38,55 +38,59 @@ export default {
 
 <template>
 
-  <!-- Product -->
-  <div class="product_card">
+  <div class="col-12 col-sm-6 col-md-4">
 
-    <!-- Product image -->
-    <div class="product_image">
+    <!-- Product -->
+    <div class="product_card">
 
-      <!-- Image -->
-      <div class="image">
-        <img :src="'images/' + product.frontImage" alt="">
-        <img class="hover_image" :src="'images/' + product.backImage" alt="">
+      <!-- Product image -->
+      <div class="product_image">
+
+        <!-- Image -->
+        <div class="image">
+          <img :src="'images/' + product.frontImage" alt="">
+          <img class="hover_image img-fluid" :src="'images/' + product.backImage" alt="">
+        </div>
+
+        <!-- Like -->
+        <div class="like" @click="product.isInFavorites = !product.isInFavorites, state.addToFavorites()">
+          <i class="fa-solid fa-heart fa-lg" :class="{ liked: product.isInFavorites === true }"></i>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges">
+          <div v-for="badge in product.badges" :class="badge.type">{{ badge.value }}</div>
+        </div>
+
       </div>
 
-      <!-- Like -->
-      <div class="like" @click="product.isInFavorites = !product.isInFavorites, state.addToFavorites()">
-        <i class="fa-solid fa-heart fa-lg" :class="{ liked: product.isInFavorites === true }"></i>
-      </div>
+      <!-- Product description -->
+      <ul class="product_description list-unstyled mt-3 mb-0">
 
-      <!-- Badges -->
-      <div class="badges">
-        <div v-for="badge in product.badges" :class="badge.type">{{ badge.value }}</div>
-      </div>
+        <!-- Product brand -->
+        <li class="product_brand">{{ product.brand }}</li>
+
+        <!-- Product name -->
+        <li class="product_name" @click="$emit('openModal', product.id)">{{ product.name }}</li>
+
+        <!-- Product price -->
+        <li class="product_price">
+
+          <span v-if="product.badges.find(e => e.type === 'discount')" class="discount_price">
+            {{ calcDiscountedPrice(product.price) }} €
+          </span>
+
+          <span :class="product.badges.find(e => e.type === 'discount') ? 'old_price' : 'normal_price'">
+            {{ product.price }} €
+          </span>
+
+        </li>
+
+      </ul>
 
     </div>
-
-    <!-- Product description -->
-    <ul class="product_description">
-
-      <!-- Product brand -->
-      <li class="product_brand">{{ product.brand }}</li>
-
-      <!-- Product name -->
-      <li class="product_name" @click="$emit('openModal', product.id)">{{ product.name }}</li>
-
-      <!-- Product price -->
-      <li class="product_price">
-
-        <span v-if="product.badges.find(e => e.type === 'discount')" class="discount_price">
-          {{ calcDiscountedPrice(product.price) }} €
-        </span>
-
-        <span :class="product.badges.find(e => e.type === 'discount') ? 'old_price' : 'normal_price'">
-          {{ product.price }} €
-        </span>
-
-      </li>
-
-    </ul>
-
   </div>
+
 
 </template>
 

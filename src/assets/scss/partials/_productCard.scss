@@ -2,62 +2,69 @@
 
 
 .product_card {
-  width: 32.4%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
+  height: 100%;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0px 35px 68px 0px rgba(30, 30, 30, 0.255);
+  transition: box-shadow 0.3s ease;
 
-  /* Image */
-  .image {
-    position: relative;
-    display: inline-block;
-
-    img {
-      border-radius: 8px 8px 0 0;
-    }
-
-    &:hover .hover_image {
-      display: inline;
-    }
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .hover_image {
-    display: none;
+  /* Image */
+  .product_image {
+    position: relative;
+    padding-top: 133.33%;
+    overflow: hidden;
+  }
+
+  .image {
+    display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .hover_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover .hover_image {
+      opacity: 1;
+    }
   }
 
 
   /* Badges */
-  .like,
-  .badges {
-    position: absolute;
-  }
 
   .badges {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    bottom: 15%;
-    gap: 0.5rem;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    .badge {
+      margin-right: 5px;
+      font-size: 0.8rem;
+    }
   }
 
   .like {
-    width: 10%;
-    height: 5%;
-    top: 0%;
-    right: 0%;
-    border-radius: 4px 0 0 4px;
-    border: none;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
 
     &::after {
       width: fit-content;
@@ -116,14 +123,17 @@
     padding: 0.5rem;
 
     .product_brand {
-      font-size: 0.8rem;
+      font-weight: bold;
+      color: #666;
     }
 
     .product_name {
       font-weight: bold;
+      font-size: 1.1rem;
 
       &:hover {
         cursor: pointer;
+        text-decoration: underline;
       }
     }
 
@@ -135,15 +145,16 @@
       font-weight: bold;
       font-size: 1.2rem;
       color: $booleando-discount;
-      padding-right: 0.5rem;
     }
 
     .normal_price {
       font-size: 1.2rem;
+      font-weight: bold;
     }
 
     .old_price {
       text-decoration: line-through;
+      color: #999;
     }
   }
 }

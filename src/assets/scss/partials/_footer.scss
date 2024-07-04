@@ -1,27 +1,20 @@
 @use './variables' as *;
 
 #site_footer {
-  height: 100px;
+  // height: 100px;
   background-color: $boolenado-dark;
   color: $booleando-lighter;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  .footer_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    padding: 2rem 0;
 
-    .company_and_information {
-      align-items: flex-start;
-    }
 
-    .social_icons {
-      display: flex;
-      gap: 0.5rem;
-    }
+  a {
+    color: #fff;
   }
+
+  .social_icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+
 }
