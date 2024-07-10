@@ -1,5 +1,8 @@
 # Vue E-commerce Project
 
+![Screenshot di GameHoax](public/images/screenshot.png "Home page di GameHoax")
+
+## Descrizione del Progetto
 Questo progetto è una riproduzione di un e-commerce simile a Zalando.it, sviluppato utilizzando Vue.js. L'applicazione è completamente responsive e offre un'esperienza utente fluida su dispositivi di diverse dimensioni.
 
 ## Caratteristiche principali
